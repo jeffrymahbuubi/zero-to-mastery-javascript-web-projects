@@ -6,6 +6,6 @@ This repository was made to track my work when taking "JavaScript Web Projects: 
 
 ## What's inside?
 
-In total there are **20 Projects** that utilize combination of HTML, CSS, and JavaScript. As a reminder for myself, the list of projects written below was the section I've taken and if I work something on that section, I will link the list to its respective folder,
+In total there are **20 Projects** that utilize combination of HTML, CSS, and JavaScript. As a reminder for myself, the list of projects written below was the project I've done.
 
 - **Project 1**: <a href="https://quotegenerator.jeffrymahbuubi.com/" target="_blank">Quote Generator</a>
