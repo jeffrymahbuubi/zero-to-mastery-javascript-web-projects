@@ -12,19 +12,19 @@ const loader = document.getElementById("loader");
 let apiQuotes = [];
 
 // Show Loading
-function loading() {
+function showLoadingSpinner() {
   loader.hidden = false;
   quoteContainer.hidden = true;
 }
 
 // Hide Loading
-function complete() {
+function removeLoadingSpinner() {
   quoteContainer.hidden = false;
   loader.hidden = true;
 }
 
 function newQuote() {
-  loading();
+  showLoadingSpinner();
   // Pick a random quote from apiQuotes array
   const quote = apiQuotes[Math.floor(Math.random() * apiQuotes.length)];
   // Check if Author field is blank and replace it with 'Unkown'
@@ -41,7 +41,7 @@ function newQuote() {
   }
   //   Set Quote, Hide Loader
   quoteText.textContent = quote.text;
-  complete();
+  removeLoadingSpinner();
 }
 
 // An asynchronous function can run at any time independently and it
@@ -52,7 +52,7 @@ function newQuote() {
 
 // Get Quotes From API
 async function getQuotes() {
-  loading();
+  showLoadingSpinner();
   const apiURL = "https://jacintodesign.github.io/quotes-api/data/quotes.json";
   try {
     // const response will not be populated until it has some data fetched from the API
@@ -61,7 +61,6 @@ async function getQuotes() {
     // apiQuotes turning the data fetched into a JSON object from a Web Serer
     apiQuotes = await response.json();
     newQuote();
-    // console.log(apiQuotes);
   } catch (error) {
     // Catch Error Here
   }
